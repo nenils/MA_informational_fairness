@@ -1,0 +1,5 @@
+pandas
+seaborn
+numpy
+tensorflow == 1.x
+sklearn
