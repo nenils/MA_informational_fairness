@@ -1,25 +1,56 @@
-The repository includes the technical implementation of the conducted study on informational fairness.
-The technical implementation includes the training of several fair and unfair classification model on the use-case of the home loan application dataset.
-The final two models, one fair and one unfair, are then used to predict three exemplary instances accompanied by different sets of explanations.
-The sets of explanations presented in the Study are: 
-- baseline explanations: local feature importance & demographics
-- advanced explanations: counterfactuals & normative explanations
-The explantions are generated on the instances selected using the counterfactual algorithm DiCE and the local feature importance algorithm LIME.
-For the adversarial models to be able to run, the conda environment described in the file "environment.yml" needs to be set up.
-All other files are running in the environment described in the file "requirements.txt".
+# Informational Fairness Study - Technical Implementation
 
-Where to find what?
+This repository contains the technical implementation of a study on informational fairness. The study focuses on training and evaluating fair and unfair classification models using a home loan application dataset. The final models are utilized to predict outcomes for three exemplary instances, with each instance accompanied by different sets of explanations.
 
-The development of the fair model and the counterfacutals and local feature importance of the selected fair prediction: 
-- "Adversarial_classifier_undersampled_females.ipynb"
+## Explanations in the Study
 
-The development of the unfair model and the counterfacutals and local feature importance of the selected fair prediction: 
-- "MLP_undersampling_females.ipynb"
+The study presents two sets of explanations:
+- **Baseline Explanations**: Local feature importance & demographics.
+- **Advanced Explanations**: Counterfactuals & normative explanations.
 
-The evaluation of several models is done by each model in the Notebooks that have the prefix "Fairness_audit_" and then the model name that is being evaluated.
+The explanations are generated for selected instances using:
+- **DiCE**: For generating counterfactual explanations.
+- **LIME**: For generating local feature importance.
+
+## Getting Started
+
+### Prerequisites
+
+To run the adversarial models, set up the environment described in the `environment.yml` file using Conda:
+
+```bash 
+conda env create -f environment.yml
+```
+
+For all other files, ensure you have the required packages installed by setting up the environment described in requirements.txt:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Repository Structure
+
+### Notebooks
+
+- **Adversarial_classifier_undersampled_females.ipynb**:
+  - Development of the fair model.
+  - Generation of counterfactuals and local feature importance for selected fair predictions.
+
+- **MLP_undersampling_females.ipynb**:
+  - Development of the unfair model.
+  - Generation of counterfactuals and local feature importance for selected unfair predictions.
+
+- **Fairness Audit Notebooks**:
+  - Notebooks with the prefix `Fairness_audit_` evaluate various models. Each notebook focuses on a specific model, analyzing its fairness.
+
+### Benchmarking
+
+- **Benchmark_counterfactual.ipynb**:
+  - Compares sets of counterfactuals generated for the purposes of contestability or recourse, focusing on the predictions of fair and unfair models.
+
+### Master Thesis
+
+The detailed findings and discussion of the study can be found in the master thesis:
+- **MA_informational_fairness.pdf**
 
 
-The last important file is the "Benchmark_counterfactual", that compares the sets of counterfactuals being generated for either the purpose of contestability or recourse with the fair or unfair models prediction function.
-
-
-The Master thesis can be read in the file: "MA_informational_fairness"
